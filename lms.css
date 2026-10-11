@@ -137,6 +137,12 @@
             word-break: break-all;
         }
         .contact-link:hover { color: var(--pink); text-decoration-color: var(--pink); }
+.social-title-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
 /* Base icon styling using your accent colors */
 .social-icon {
     width: 22px;
