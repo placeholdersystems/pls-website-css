@@ -16,6 +16,8 @@ Not for unauthorised personal or commercial redistribution */
   /* lines */
   --line: rgba(255,255,255,0.08);  /* card borders */
   --line-soft: rgba(255,255,255,0.07); /* dividers, header rule */
+  --card-surface: #0D0D0D;         /* .card background */
+  --card-line: rgba(255,255,255,0.08); /* .card / .card-grid hairlines */
 
   /* text */
   --text: #fff;
@@ -212,63 +214,38 @@ img { max-width: 100%; }
 }
 .link:hover { color: var(--pink); text-decoration: underline; }
 
-/* ══════════════════════════════════════════════════════════
-   CARD STANDARDIZATION  (append to standard.css, after the
-   old CARD block is removed)
+/* ── CARD (standard surface) ──
+   Every card:  <div class="card card--NAME">   (square corners, no hover)
+   Card groups: <div class="card-grid card-grid--NAME">  (flush, no gaps)
+   Per-variant layout (padding, flex, columns, spans) lives in the page
+   or in lms.css under .card--NAME / .card-grid--NAME. */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-surface);
+  border: 0.5px solid var(--card-line);
+  border-radius: 0;
+}
+a.card, button.card { cursor: pointer; }
+.card:focus-visible { outline: 2px solid var(--pink); outline-offset: -2px; }
 
-   Does exactly three things and nothing else:
-     1. 90° corners
-     2. no hover effects
-     3. grid cards sit flush (no gaps, shared hairline edges)
-   Columns, spans, padding, min-heights, backgrounds, fonts,
-   and the index.html 3D motion are left alone.
-
-   Specificity note: selectors are prefixed with `body` so
-   they beat the single-class rules in each page's own
-   <style> block regardless of load order.
-   ══════════════════════════════════════════════════════════ */
-
-:root { --card-line: rgba(255,255,255,0.08); }
-
-/* ── 1. FLUSH GRIDS ──
-   gap is 0. The grid draws the top + left hairline and each
-   card draws its right + bottom hairline, so every shared
-   edge is a single 0.5px line instead of doubling up. */
-body :is(.about-grid, .stats-grid, .counters-row, .track-grid,
-         .projects-list, .bento-grid, .social-grid) {
+/* Flush grid: the grid draws the top + left hairline, each card draws its
+   right + bottom hairline, so shared edges are one line, never doubled. */
+.card-grid {
+  display: grid;
   gap: 0;
   border-top: 0.5px solid var(--card-line);
   border-left: 0.5px solid var(--card-line);
 }
+.card-grid > .card { border-width: 0 0.5px 0.5px 0; }
 
-/* ── 2. GRID CARDS: 90° corners, right/bottom hairline only ── */
-body :is(.about-card, .stat-card, .counter-card, .track-card,
-         .project-card, .bento-card, .social-card) {
-  border: 0;
-  border-right: 0.5px solid var(--card-line);
-  border-bottom: 0.5px solid var(--card-line);
-  border-radius: 0;
-}
-
-/* ── 3. NO HOVER ──
-   Safety net for any hover rule you haven't deleted yet.
-   (!important also beats JS inline styles.)
-   .about-card is excluded from the transform reset so the
-   index.html tilt script keeps working; its border still
-   can't change on hover. */
-body :is(.stat-card, .counter-card, .track-card,
-         .project-card, .bento-card, .social-card):hover {
-  transform: none !important;
-  box-shadow: none !important;
-  border-color: var(--card-line) !important;
-}
-body .about-card:hover { border-color: var(--card-line) !important; }
-
-/* ── STANDALONE CARDS (not in a grid): 90° corners only ──
-   Optional. Delete any selector you don't want squared. */
-body :is(.card, .form-embed-card, .agree-card, .credit-card,
-         .stage-card, .home-chart-card, .note-card, .channel-card) {
-  border-radius: 0;
+/* optional top-edge brand bar (add to .card) */
+.card--accent::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--brand-gradient);
 }
 
 /* ── LISTS ── */
