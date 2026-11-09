@@ -71,7 +71,7 @@ img { max-width: 100%; }
 .page-wrap {
   max-width: var(--wrap-max);
   margin: 0 auto;
-  padding: 170px var(--wrap-pad-x) 100px;
+  padding: 85px var(--wrap-pad-x) 100px;
 }
 
 /* ── PAGE HEADER (hero block — keep identical across pages) ── */
