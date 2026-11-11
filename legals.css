@@ -1,6 +1,4 @@
 
-legals.css
-100%
 .meta-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
 .meta-pill { background: #0D0D0D; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 0px; padding: 5px 12px; font-size: 11px; color: rgba(255,255,255,0.45); }
 .meta-pill strong { color: rgba(255,255,255,0.7); font-weight: 500; }
