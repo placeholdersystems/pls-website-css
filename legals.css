@@ -1,5 +1,8 @@
+
+legals.css
+100%
 .meta-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
-.meta-pill { background: #0D0D0D; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 12px; font-size: 11px; color: rgba(255,255,255,0.45); }
+.meta-pill { background: #0D0D0D; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 0px; padding: 5px 12px; font-size: 11px; color: rgba(255,255,255,0.45); }
 .meta-pill strong { color: rgba(255,255,255,0.7); font-weight: 500; }
 
 /* ── SECTION HEADING ── */
@@ -45,12 +48,12 @@
 .divider { height: 0.5px; background: rgba(255,255,255,0.07); margin: 48px 0 0; }
 
 /* ── CALLOUT BOX ── */
-.callout { background: #0D0D0D; border: 0.5px solid rgba(255,255,255,0.08); border-left: 3px solid var(--pink); border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+.callout { background: #0D0D0D; border: 0.5px solid rgba(255,255,255,0.08); border-left: 3px solid var(--pink); border-radius: 0px; padding: 20px 24px; margin: 28px 0; }
 .callout p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.75; }
 .callout strong { color: rgba(255,255,255,0.9); font-weight: 600; }
 
 /* ── CODE / MONO BLOCK ── */
-.mono-block { background: #0A0A0A; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 20px 24px; margin: 20px 0; font-family: monospace; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.8; white-space: pre-wrap; word-break: break-word; }
+.mono-block { background: #0A0A0A; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 0px; padding: 20px 24px; margin: 20px 0; font-family: monospace; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.8; white-space: pre-wrap; word-break: break-word; }
 
 /* ── LINKS ── */
 .legal-link { color: var(--orange); text-decoration: none; font-weight: 600; transition: color 0.2s, text-decoration 0.2s; }
@@ -62,4 +65,5 @@
 .credit-name { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.5; }
 
 /* ── ADDENDUM BADGE ── */
-.addendum-badge { display: inline-block; background: rgba(55,138,221,0.1); border: 0.5px solid rgba(55,138,221,0.25); border-radius: 6px; padding: 6px 12px; font-size: 12px; color: #378ADD; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 16px; }
+.addendum-badge { display: inline-block; background: rgba(55,138,221,0.1); border: 0.5px solid rgba(55,138,221,0.25); border-radius: 0px; padding: 6px 12px; font-size: 12px; color: #378ADD; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 16px; }
+Displaying legals.css.
